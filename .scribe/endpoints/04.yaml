@@ -1,0 +1,113 @@
+name: Coupon
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/coupons
+    metadata:
+      groupName: Coupon
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Coupon List'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer dPZ6g3vDk5V1hbEa6ae48fc'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/coupons-special
+    metadata:
+      groupName: Coupon
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Coupon Special List'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer Db36kaec8gvhV1d6f54aZEP'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/coupon_set/{id}'
+    metadata:
+      groupName: Coupon
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Coupon Special User Set'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the coupon set.'
+        required: true
+        example: aut
+        type: string
+        custom: []
+    cleanUrlParameters:
+      id: aut
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer VeaDdcEfhb1g6k3v68a4P5Z'
+    controller: null
+    method: null
+    route: null
+    custom: []

@@ -1,0 +1,359 @@
+openapi: 3.0.3
+info:
+  title: 'Laravel - local'
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://localhost:8000'
+paths:
+  /api/v1/register:
+    post:
+      summary: Register
+      operationId: register
+      description: 'Register the user with given data if valid.'
+      parameters: []
+      responses: {  }
+      tags:
+        - Auth
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: ''
+                  example: fugit
+                email:
+                  type: string
+                  description: 'The email of the user.'
+                  example: pschimmel@example.org
+                password:
+                  type: string
+                  description: 'Password for the user.'
+                  example: q-p59!
+              required:
+                - name
+      security: []
+  /api/v1/login:
+    post:
+      summary: Login
+      operationId: login
+      description: 'Login the user with given data if valid.'
+      parameters: []
+      responses: {  }
+      tags:
+        - Auth
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: 'The email of the user.'
+                  example: wanda.carter@example.org
+                password:
+                  type: string
+                  description: 'Password for the user.'
+                  example: 'A@DSv8V]0L~M"zVhdf]'
+      security: []
+  /api/v1/user-detail:
+    get:
+      summary: Profile
+      operationId: profile
+      description: 'Profile Detail'
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {YOUR_AUTH_KEY}'
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Auth
+  /api/v1/profile-edit:
+    post:
+      summary: 'Profile Update'
+      operationId: profileUpdate
+      description: 'Profile Update the user with given data if valid.'
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {YOUR_AUTH_KEY}'
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Auth
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Name for the user.'
+                  example: in
+                email:
+                  type: string
+                  description: 'The email of the user.'
+                  example: alexandre.koss@example.org
+                password:
+                  type: string
+                  description: 'Password for the user.'
+                  example: 'v{<tQ`Q*zK:]!G'
+                surname:
+                  type: string
+                  description: 'Surname for the user.'
+                  example: fugit
+                phone:
+                  type: string
+                  description: 'Phone for the user.'
+                  example: quo
+  /api/v1/user-destroy:
+    get:
+      summary: 'Destroy User'
+      operationId: destroyUser
+      description: 'Destroy User with given parameters'
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {YOUR_AUTH_KEY}'
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Auth
+  /api/v1/user-pay:
+    get:
+      summary: 'User Pay'
+      operationId: userPay
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {YOUR_AUTH_KEY}'
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Auth
+  /api/v1/user-type:
+    get:
+      summary: 'User Type List'
+      operationId: userTypeList
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {YOUR_AUTH_KEY}'
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Auth
+  /api/v1/logout:
+    get:
+      summary: 'User Logout'
+      operationId: userLogout
+      description: 'User Logout with given parameters'
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {YOUR_AUTH_KEY}'
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Auth
+  /api/v1/coupons:
+    get:
+      summary: 'Coupon List'
+      operationId: couponList
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {YOUR_AUTH_KEY}'
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Coupon
+  /api/v1/coupons-special:
+    get:
+      summary: 'Coupon Special List'
+      operationId: couponSpecialList
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {YOUR_AUTH_KEY}'
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Coupon
+  '/api/v1/coupon_set/{id}':
+    get:
+      summary: 'Coupon Special User Set'
+      operationId: couponSpecialUserSet
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {YOUR_AUTH_KEY}'
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Coupon
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the coupon set.'
+        example: aut
+        required: true
+        schema:
+          type: string
+  '/api/v1/daily/{day}':
+    get:
+      summary: 'Date Filter Match List'
+      operationId: dateFilterMatchList
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {YOUR_AUTH_KEY}'
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Match
+    parameters:
+      -
+        in: path
+        name: day
+        description: ''
+        example: et
+        required: true
+        schema:
+          type: string
+  /api/v1/live-match:
+    get:
+      summary: 'Live Match List'
+      operationId: liveMatchList
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {YOUR_AUTH_KEY}'
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Match
+  /api/v1/all-match:
+    get:
+      summary: 'All Data Match List'
+      operationId: allDataMatchList
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {YOUR_AUTH_KEY}'
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Match
+  /api/v1/push:
+    get:
+      summary: 'Push List'
+      operationId: pushList
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {YOUR_AUTH_KEY}'
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Push
+  /api/v1/settings:
+    get:
+      summary: Settings
+      operationId: settings
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {YOUR_AUTH_KEY}'
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Settings
+tags:
+  -
+    name: Auth
+    description: ''
+  -
+    name: Coupon
+    description: ''
+  -
+    name: Match
+    description: ''
+  -
+    name: Push
+    description: ''
+  -
+    name: Settings
+    description: ''
+components:
+  securitySchemes:
+    default:
+      type: http
+      scheme: bearer
+      description: ''
+security:
+  -
+    default: []
